@@ -1,0 +1,14 @@
+[Unit]
+Description=Lark to DingTalk Bridge
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/opt/lark-bridge
+ExecStart=/usr/bin/python3 /opt/lark-bridge/app.py
+Restart=always
+RestartSec=10
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
